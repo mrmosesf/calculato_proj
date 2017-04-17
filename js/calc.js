@@ -116,7 +116,14 @@
 
     function pressEqual() {
 
+        switch (operator.value) {
+            case "+" : calcMemory = parseInt(rightOperand.value + (parseInt(leftOperand));
+
+
+        }
+
     }
+
 
 
     // Handles the display of proper text into correct text field for operands only
