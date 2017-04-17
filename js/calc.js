@@ -27,7 +27,7 @@
     var minus = document.getElementById('btnMinus');
 
     var placeholder = "";
-    var calcMemory ="";
+    var calcMemory = "";
     var currentOperator = "";
 
     function pressOne() {
@@ -83,25 +83,25 @@
     function pressPlus() {
         currentOperator = "+";
         isOperatorReady = true;
-        displayOperand();
+        displayOperator();
     }
 
     function pressMinus() {
         currentOperator = "-";
         isOperatorReady = true;
-        displayOperand();
+        displayOperator();
     }
 
     function pressMult() {
         currentOperator = "*";
         isOperatorReady = true;
-        displayOperand();
+        displayOperator();
     }
 
     function pressDivide() {
         currentOperator = "/";
         isOperatorReady = true;
-        displayOperand();
+        displayOperator();
     }
 
     function pressClear() {
@@ -116,16 +116,23 @@
 
     // Handles the display of proper text into correct text field
     function displayOperand() {
-        if(isRightReady){
-            rightOperand.innerText = placeholder;
+        if (operator.value !== "") {
+            rightOperand.value = placeholder;
         }
-        else if (isOperatorReady){
-            operator.innerText = currentOperator;
-        }
+
         else {
-            leftOperand.innerText = placeholder;
+            leftOperand.value = placeholder;
         }
     }
+
+    function displayOperator() {
+        if (isOperatorReady) {
+            operator.value = currentOperator;
+            isOperatorReady = false;
+        }
+        displayOperand();
+    }
+
 
     one.addEventListener('click', pressOne);
     two.addEventListener('click', pressTwo);
