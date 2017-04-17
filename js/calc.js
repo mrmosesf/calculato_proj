@@ -105,7 +105,8 @@
     }
 
     function pressClear() {
-
+        placeholder = "";
+        displayOperand();
     }
 
     function pressEqual() {
