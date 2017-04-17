@@ -64,13 +64,14 @@
 
     function pressZero() {
         placeholder = placeholder + "0";
-        displayLeftOperand();
         console.log(placeholder);
     }
 
     function displayLeftOperand() {
         leftOperand.innerHTML = placeholder;
     }
+
+    displayLeftOperand();
 
     one.addEventListener('click', pressOne);
     two.addEventListener('click', pressTwo);
@@ -83,7 +84,7 @@
     nine.addEventListener('click', pressNine);
     zero.addEventListener('click', pressZero);
 
-    var placeholder = "";
+    var placeholder = " ";
     var isLeftEmpty = null;
     var isOperatorFull = null;
     var isRightEmpty = null;
