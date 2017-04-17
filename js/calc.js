@@ -27,6 +27,7 @@
     var minus = document.getElementById('btnMinus');
 
     var placeholder = "";
+    var calcMemory ="";
     var currentOperator = "";
 
     function pressOne() {
@@ -80,36 +81,44 @@
     }
 
     function pressPlus() {
-        currentOperator = "+"
-        isOperatorDone = true;
+        currentOperator = "+";
+        isOperatorReady = true;
         displayOperand();
     }
 
     function pressMinus() {
-        currentOperator = "-"
-        isOperatorDone = true;
+        currentOperator = "-";
+        isOperatorReady = true;
         displayOperand();
     }
 
     function pressMult() {
-        currentOperator = "*"
-        isOperatorDone = true;
+        currentOperator = "*";
+        isOperatorReady = true;
         displayOperand();
     }
 
     function pressDivide() {
-        currentOperator = "/"
-        isOperatorDone = true;
+        currentOperator = "/";
+        isOperatorReady = true;
         displayOperand();
     }
 
+    function pressClear() {
 
-    // Handles the display of proper text into corrext text field
+    }
+
+    function pressEqual() {
+
+    }
+
+
+    // Handles the display of proper text into correct text field
     function displayOperand() {
-        if(isRightDone){
+        if(isRightReady){
             rightOperand.innerText = placeholder;
         }
-        else if (isOperatorDone){
+        else if (isOperatorReady){
             operator.innerText = currentOperator;
         }
         else {
@@ -133,8 +142,11 @@
     mult.addEventListener('click', pressMult);
     divide.addEventListener('click', pressDivide);
 
+    clear.addEventListener('click', pressClear);
+    equal.addEventListener('clock', pressEqual);
+
     var isLeftDone = false;
-    var isOperatorDone = false;
-    var isRightDone = false;
+    var isOperatorReady = false;
+    var isRightReady = false;
 
 })();
