@@ -26,52 +26,96 @@
     var plus = document.getElementById('btnPlus');
     var minus = document.getElementById('btnMinus');
 
+    var placeholder = "";
+    var currentOperator = "";
+
     function pressOne() {
         placeholder = placeholder + "1";
+        displayOperand();
     }
 
     function pressTwo() {
         placeholder = placeholder + "2";
+        displayOperand();
     }
 
     function pressThree() {
         placeholder = placeholder + "3";
+        displayOperand();
     }
 
     function pressFour() {
         placeholder = placeholder + "4";
+        displayOperand();
     }
 
     function pressFive() {
         placeholder = placeholder + "5";
+        displayOperand();
     }
 
     function pressSix() {
         placeholder = placeholder + "6";
+        displayOperand();
     }
 
     function pressSeven() {
         placeholder = placeholder + "7";
+        displayOperand();
     }
 
     function pressEight() {
         placeholder = placeholder + "8";
+        displayOperand();
     }
 
     function pressNine() {
         placeholder = placeholder + "9";
+        displayOperand();
     }
 
     function pressZero() {
         placeholder = placeholder + "0";
-        console.log(placeholder);
+        displayOperand();
     }
 
-    function displayLeftOperand() {
-        leftOperand.innerHTML = placeholder;
+    function pressPlus() {
+        currentOperator = "+"
+        isOperatorDone = true;
+        displayOperand();
     }
 
-    displayLeftOperand();
+    function pressMinus() {
+        currentOperator = "-"
+        isOperatorDone = true;
+        displayOperand();
+    }
+
+    function pressMult() {
+        currentOperator = "*"
+        isOperatorDone = true;
+        displayOperand();
+    }
+
+    function pressDivide() {
+        currentOperator = "/"
+        isOperatorDone = true;
+        displayOperand();
+    }
+
+
+    // Handles the display of proper text into corrext text field
+    function displayOperand() {
+        if(isRightDone){
+            rightOperand.innerText = placeholder;
+        }
+        else if (isOperatorDone){
+            operator.innerText = currentOperator;
+        }
+        else {
+            leftOperand.innerText = placeholder;
+        }
+    }
 
     one.addEventListener('click', pressOne);
     two.addEventListener('click', pressTwo);
@@ -84,9 +128,13 @@
     nine.addEventListener('click', pressNine);
     zero.addEventListener('click', pressZero);
 
-    var placeholder = " ";
-    var isLeftEmpty = null;
-    var isOperatorFull = null;
-    var isRightEmpty = null;
+    plus.addEventListener('click', pressPlus);
+    minus.addEventListener('click', pressMinus);
+    mult.addEventListener('click', pressMult);
+    divide.addEventListener('click', pressDivide);
+
+    var isLeftDone = false;
+    var isOperatorDone = false;
+    var isRightDone = false;
 
 })();
