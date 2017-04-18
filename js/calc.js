@@ -218,6 +218,7 @@
         else {
             leftOperand.value = placeholder;
         }
+        showTheDot();
     }
 
     // Displays operator and provides sets placeholder blank for displayOperand
