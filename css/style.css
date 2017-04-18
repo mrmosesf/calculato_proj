@@ -1,0 +1,28 @@
+body{
+    margin: 20%;
+    padding: auto;
+    font-family: 'Futura';
+}
+
+img{
+    max-width: 10%;
+}
+
+.like-a-header{
+    font-size: 4em;
+}
+
+button {
+    background-color: gainsboro;
+    border-style: hidden;
+    padding: 5% 10%;
+    font-size: 2em;
+}
+
+.operator {
+    background-color: orange;
+    color: white;
+}
+
+.textBox {
+}

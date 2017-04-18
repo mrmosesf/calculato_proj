@@ -6,40 +6,50 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div id="top">
+    <img src="img/logo.svg" alt="Calculator logo">
 
-<p>
-    <input type="text" id="leftOp">
-    <input type="text" id="operator">
-    <input type="text" id="rightOp">
-</p>
+    <span class="like-a-header">
+        Calculator
+    </span>
+</div>
 
-<p>
-    <button id="btnOne">1</button>
-    <button id="btnTwo">2</button>
-    <button id="btnThree">3</button>
-    <button id="btnPlus">+</button>
-</p>
+<hr>
+<div id="bottom">
+    <p>
+        <input type="text" id="leftOp" class="textBox">
+        <input type="text" id="operator" class="textBox">
+        <input type="text" id="rightOp" class="textBox">
+    </p>
 
-<p>
-    <button id="btnFour">4</button>
-    <button id="btnFive">5</button>
-    <button id="btnSix">6</button>
-    <button id="btnMinus">-</button>
-</p>
+    <p>
+        <button id="btnOne">1</button>
+        <button id="btnTwo">2</button>
+        <button id="btnThree">3</button>
+        <button id="btnPlus" class="operator">+</button>
+    </p>
 
-<p>
-    <button id="btnSeven">7</button>
-    <button id="btnEight">8</button>
-    <button id="btnNine">9</button>
-    <button id="btnMult">*</button>
-</p>
+    <p>
+        <button id="btnFour">4</button>
+        <button id="btnFive">5</button>
+        <button id="btnSix">6</button>
+        <button id="btnMinus" class="operator">-</button>
+    </p>
 
-<p>
-    <button id="btnClear">C</button>
-    <button id="btnZero">0</button>
-    <button id="btnEqual">=</button>
-    <button id="btnDivide">/</button>
-</p>
+    <p>
+        <button id="btnSeven">7</button>
+        <button id="btnEight">8</button>
+        <button id="btnNine">9</button>
+        <button id="btnMult" class="operator">*</button>
+    </p>
+
+    <p>
+        <button id="btnClear">C</button>
+        <button id="btnZero">0</button>
+        <button id="btnEqual">=</button>
+        <button id="btnDivide" class="operator">/</button>
+    </p>
+</div>
 
 <script src="js/calc.js"></script>
 </body>
