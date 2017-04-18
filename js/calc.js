@@ -28,6 +28,11 @@
     var plus = document.getElementById('btnPlus');
     var minus = document.getElementById('btnMinus');
 
+    //Set read-only for all input boxes
+    leftOperand.readOnly = true;
+    rightOperand.readOnly = true;
+    operator.readOnly = true;
+
     // Initialize variables later to be used during calculation
     var placeholder = "";
     var calcMemory = "";
