@@ -109,25 +109,31 @@
         displayOperator();
     }
 
+    // Clears text from active operand
     function pressClear() {
         placeholder = "";
+        clear.innerText = "AC";
         displayOperand();
     }
 
+    // Completely clears both operands and operators
     function doubleClear() {
         placeholder = "";
         currentOperator = "";
-        operator.value="";
-        leftOperand.value ="";
-        rightOperand.value="";
+        operator.value = "";
+        leftOperand.value = "";
+        rightOperand.value = "";
+        clear.innerText = "C";
         displayOperator();
         displayOperand();
     }
 
+    //  Each IF will check for a value in the right operand, and then execute code using a stored value, to allow for recursively operating
+    //  Otherwise, we assume it is the the first time the program is being run
     function pressEqual() {
         switch (operator.value) {
             case "+":
-                if(!rightOperand.value){
+                if (!rightOperand.value) {
                     calcDone = parseFloat(leftOperand.value) + parseFloat(calcMemory);
                     leftOperand.value = calcDone;
                     rightOperand.value = "";
@@ -140,7 +146,7 @@
                 }
                 break;
             case "-":
-                if(!rightOperand.value){
+                if (!rightOperand.value) {
                     calcDone = parseFloat(leftOperand.value) - parseFloat(calcMemory);
                     leftOperand.value = calcDone;
                     rightOperand.value = "";
@@ -152,7 +158,7 @@
                 }
                 break;
             case "*":
-                if(!rightOperand.value){
+                if (!rightOperand.value) {
                     calcDone = parseFloat(leftOperand.value) * parseFloat(calcMemory);
                     calcMemory = rightOperand.value;
                     leftOperand.value = calcDone;
@@ -171,7 +177,7 @@
                     placeholder = "";
                     displayOperand();
                 }
-                else if(!rightOperand.value){
+                else if (!rightOperand.value) {
                     calcDone = parseFloat(leftOperand.value) / parseFloat(calcMemory);
                     leftOperand.value = calcDone;
                     rightOperand.value = "";
@@ -179,7 +185,7 @@
                 else {
                     calcDone = parseFloat(leftOperand.value) / parseFloat(rightOperand.value)
                     calcMemory = rightOperand.value;
-                    placeholder ="";
+                    placeholder = "";
                     displayOperand();
                 }
         }
