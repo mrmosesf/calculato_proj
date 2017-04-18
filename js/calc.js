@@ -31,7 +31,7 @@
     // Initialize variables later to be used during calculation
     var placeholder = "";
     var calcMemory = "";
-    var calcDone = null;
+    var calcDone = "";
     var currentOperator = "";
 
     // Handler functions to be called for event listeners
@@ -117,6 +117,9 @@
     function doubleClear() {
         placeholder = "";
         currentOperator = "";
+        operator.value="";
+        leftOperand.value ="";
+        rightOperand.value="";
         displayOperator();
         displayOperand();
     }
@@ -124,19 +127,43 @@
     function pressEqual() {
         switch (operator.value) {
             case "+":
-                calcMemory = parseFloat(leftOperand.value) + parseFloat(rightOperand.value);
-                leftOperand.value = calcMemory;
-                rightOperand.value = "";
+                if(!rightOperand.value){
+                    calcDone = parseFloat(leftOperand.value) + parseFloat(calcMemory);
+                    leftOperand.value = calcDone;
+                    rightOperand.value = "";
+                }
+                else {
+                    calcDone = parseFloat(leftOperand.value) + parseFloat(rightOperand.value);
+                    calcMemory = rightOperand.value;
+                    leftOperand.value = calcDone;
+                    rightOperand.value = "";
+                }
                 break;
             case "-":
-                calcMemory = parseFloat(leftOperand.value) - parseFloat(rightOperand.value);
-                leftOperand.value = calcMemory;
-                rightOperand.value = "";
+                if(!rightOperand.value){
+                    calcDone = parseFloat(leftOperand.value) - parseFloat(calcMemory);
+                    leftOperand.value = calcDone;
+                    rightOperand.value = "";
+                }
+                else {
+                    calcDone = parseFloat(leftOperand.value) - parseFloat(rightOperand.value);
+                    leftOperand.value = calcDone;
+                    rightOperand.value = "";
+                }
                 break;
             case "*":
-                calcMemory = parseFloat(leftOperand.value) * parseFloat(rightOperand.value);
-                leftOperand.value = calcMemory;
-                rightOperand.value = "";
+                if(!rightOperand.value){
+                    calcDone = parseFloat(leftOperand.value) * parseFloat(calcMemory);
+                    calcMemory = rightOperand.value;
+                    leftOperand.value = calcDone;
+                    rightOperand.value = "";
+                }
+                else {
+                    calcDone = parseFloat(leftOperand.value) * parseFloat(rightOperand.value);
+                    calcMemory = rightOperand.value;
+                    leftOperand.value = calcDone;
+                    rightOperand.value = "";
+                }
                 break;
             case "/":
                 if (rightOperand.value === "0") {
@@ -144,10 +171,16 @@
                     placeholder = "";
                     displayOperand();
                 }
-                else {
-                    calcMemory = parseFloat(leftOperand.value) / parseFloat(rightOperand.value);
-                    leftOperand.value = calcMemory;
+                else if(!rightOperand.value){
+                    calcDone = parseFloat(leftOperand.value) / parseFloat(calcMemory);
+                    leftOperand.value = calcDone;
                     rightOperand.value = "";
+                }
+                else {
+                    calcDone = parseFloat(leftOperand.value) / parseFloat(rightOperand.value)
+                    calcMemory = rightOperand.value;
+                    placeholder ="";
+                    displayOperand();
                 }
         }
     }
@@ -167,7 +200,7 @@
 
     // Displays operator and provides sets placeholder blank for displayOperand
     function displayOperator() {
-        if (isOperatorReady) {
+        if (currentOperator) {
             operator.value = currentOperator;
             isOperatorReady = false;
             placeholder = "";
