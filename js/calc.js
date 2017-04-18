@@ -114,16 +114,43 @@
         displayOperand();
     }
 
-    function pressEqual() {
-
-        switch (operator.value) {
-            case "+" : calcMemory = parseInt(rightOperand.value + (parseInt(leftOperand));
-
-
-        }
-
+    function doubleClear() {
+        placeholder = "";
+        currentOperator = "";
+        displayOperand();
     }
 
+    function pressEqual() {
+        switch (operator.value) {
+            case "+":
+                calcMemory = parseFloat(rightOperand.value) + parseFloat(leftOperand.value);
+                leftOperand.value = calcMemory;
+                rightOperand.value = "";
+                break;
+            case "-":
+                calcMemory = parseFloat(rightOperand.value) - parseFloat(leftOperand.value);
+                leftOperand.value = calcMemory;
+                rightOperand.value = "";
+                break;
+            case "*":
+                calcMemory = parseFloat(rightOperand.value) * parseFloat(leftOperand.value);
+                leftOperand.value = calcMemory;
+                rightOperand.value = "";
+                break;
+            case "/":
+                if (rightOperand.value === "0") {
+                    alert("Can you divide by zero?");
+                    placeholder = "";
+                    displayOperand();
+                }
+                else {
+                    calcMemory = parseFloat(rightOperand.value) * parseFloat(leftOperand.value);
+                    leftOperand.value = calcMemory;
+                    rightOperand.value = "";
+                }
+
+        }
+    }
 
 
     // Handles the display of proper text into correct text field for operands only
@@ -149,7 +176,7 @@
     }
 
 
-    // Event listenrs that call desired handler function
+    // Event listeners that call desired handler function
     one.addEventListener('click', pressOne);
     two.addEventListener('click', pressTwo);
     three.addEventListener('click', pressThree);
@@ -167,7 +194,8 @@
     divide.addEventListener('click', pressDivide);
 
     clear.addEventListener('click', pressClear);
-    equal.addEventListener('clock', pressEqual);
+    clear.addEventListener('dblclick', doubleClear);
+    equal.addEventListener('click', pressEqual);
 
     // Boolean operators that assist in selecting which operand button pressses are inputted to
     var isLeftDone = false;
