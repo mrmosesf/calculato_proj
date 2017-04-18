@@ -117,6 +117,7 @@
     function doubleClear() {
         placeholder = "";
         currentOperator = "";
+        displayOperator();
         displayOperand();
     }
 
@@ -148,7 +149,6 @@
                     leftOperand.value = calcMemory;
                     rightOperand.value = "";
                 }
-
         }
     }
 
