@@ -2,6 +2,7 @@ body{
     margin: 20%;
     padding: auto;
     font-family: 'Futura';
+    max-height: 50%
 }
 
 img{
@@ -9,14 +10,18 @@ img{
 }
 
 .like-a-header{
-    font-size: 4em;
+    font-size: 400%;
 }
 
 button {
     background-color: gainsboro;
     border-style: hidden;
     padding: 5% 10%;
-    font-size: 2em;
+    font-size: 200%;
+    -webkit-margin-before: 0.25em;
+    -webkit-margin-after: 0.25em;
+    -webkit-margin-start: auto;
+    -webkit-margin-end: auto;
 }
 
 .operator {
@@ -25,4 +30,14 @@ button {
 }
 
 .textBox {
+    cursor: not-allowed;
+    font-size: 200%;
+    padding: 5% 0%;
+    text-align: center;
+    border: inset 1px black;
+    -webkit-margin-before: 0.5em;
+    -webkit-margin-after: 0.5em;
+    -webkit-margin-start: auto;
+    -webkit-margin-end: auto;
+    width: 31%;
 }
