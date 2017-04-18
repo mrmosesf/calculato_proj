@@ -165,7 +165,6 @@
             case "*":
                 if (!rightOperand.value) {
                     calcDone = parseFloat(leftOperand.value) * parseFloat(calcMemory);
-                    calcMemory = rightOperand.value;
                     leftOperand.value = calcDone;
                     rightOperand.value = "";
                 }
