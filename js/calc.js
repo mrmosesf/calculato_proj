@@ -124,17 +124,17 @@
     function pressEqual() {
         switch (operator.value) {
             case "+":
-                calcMemory = parseFloat(rightOperand.value) + parseFloat(leftOperand.value);
+                calcMemory = parseFloat(leftOperand.value) + parseFloat(rightOperand.value);
                 leftOperand.value = calcMemory;
                 rightOperand.value = "";
                 break;
             case "-":
-                calcMemory = parseFloat(rightOperand.value) - parseFloat(leftOperand.value);
+                calcMemory = parseFloat(leftOperand.value) - parseFloat(rightOperand.value);
                 leftOperand.value = calcMemory;
                 rightOperand.value = "";
                 break;
             case "*":
-                calcMemory = parseFloat(rightOperand.value) * parseFloat(leftOperand.value);
+                calcMemory = parseFloat(leftOperand.value) * parseFloat(rightOperand.value);
                 leftOperand.value = calcMemory;
                 rightOperand.value = "";
                 break;
@@ -145,7 +145,7 @@
                     displayOperand();
                 }
                 else {
-                    calcMemory = parseFloat(rightOperand.value) * parseFloat(leftOperand.value);
+                    calcMemory = parseFloat(leftOperand.value) / parseFloat(rightOperand.value);
                     leftOperand.value = calcMemory;
                     rightOperand.value = "";
                 }
@@ -159,7 +159,7 @@
         if (operator.value !== "") {
             rightOperand.value = placeholder;
         }
-        // Places text in left operand by default, until operator fufills above IF condition
+        // Places text in left operand by default, until operator fulfills above IF condition
         else {
             leftOperand.value = placeholder;
         }
