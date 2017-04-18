@@ -2,6 +2,7 @@ body{
     margin: 20%;
     padding: auto;
     font-family: 'Futura';
+    background: linear-gradient(to bottom, #ebebeb, white);
 }
 
 img{
