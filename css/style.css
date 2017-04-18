@@ -2,7 +2,6 @@ body{
     margin: 20%;
     padding: auto;
     font-family: 'Futura';
-    max-height: 50%
 }
 
 img{
@@ -40,4 +39,8 @@ button {
     -webkit-margin-start: auto;
     -webkit-margin-end: auto;
     width: 31%;
+}
+
+#redDot{
+    float: right;
 }

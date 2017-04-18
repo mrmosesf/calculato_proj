@@ -28,6 +28,10 @@
     var plus = document.getElementById('btnPlus');
     var minus = document.getElementById('btnMinus');
 
+    // Targets visual elements
+    var dot = document.getElementById('redDot');
+    dot.style.display = "none";
+
     //Set read-only for all input boxes
     leftOperand.readOnly = true;
     rightOperand.readOnly = true;
@@ -133,9 +137,17 @@
         displayOperand();
     }
 
+    function showTheDot() {
+        dot.style.display = 'inherit';
+        setTimeout(function () {
+            dot.style.display = 'none';
+        },250)
+    }
+
     //  Each IF will check for a value in the right operand, and then execute code using a stored value, to allow for recursively operating
     //  Otherwise, we assume it is the the first time the program is being run
     function pressEqual() {
+        showTheDot();
         switch (operator.value) {
             case "+":
                 if (!rightOperand.value) {
