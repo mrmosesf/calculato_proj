@@ -7,7 +7,6 @@
     // Variables to target HTML elements
     var leftOperand = document.getElementById('leftOp');
     var rightOperand = document.getElementById('rightOp');
-
     var operator = document.getElementById('operator');
 
     var one = document.getElementById('btnOne');

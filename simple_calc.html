@@ -2,48 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="css/calculator.css">
 </head>
 <body>
 
-<div id = "calc_container">
+<div id="calc_container">
 
-<p>
-    <input type="text" id="leftOp">
-    <input type="text" id="operator">
-    <input type="text" id="rightOp">
-</p>
 
-<p>
-    <button id="btnOne">1</button>
-    <button id="btnTwo">2</button>
-    <button id="btnThree">3</button>
-    <button id="btnPlus">+</button>
-</p>
+    <div class="calc_screen">
+        <p>
+            <input type="text" id="leftOp">
+            <input type="text" id="operator">
+            <input type="text" id="rightOp">
+        </p>
 
-<p>
-    <button id="btnFour">4</button>
-    <button id="btnFive">5</button>
-    <button id="btnSix">6</button>
-    <button id="btnMinus">-</button>
-</p>
+    </div>
 
-<p>
-    <button id="btnSeven">7</button>
-    <button id="btnEight">8</button>
-    <button id="btnNine">9</button>
-    <button id="btnMult">*</button>
-</p>
+    <div class="number_btns">
+        <p>
+            <button id="btnOne">1</button>
+            <button id="btnTwo">2</button>
+            <button id="btnThree">3</button>
+            <button id="btnPlus">+</button>
+        </p>
 
-<p>
-    <button id="btnClear">C</button>
-    <button id="btnZero">0</button>
-    <button id="btnEqual">=</button>
-    <button id="btnDivide">/</button>
-</p>
+        <p>
+            <button id="btnFour">4</button>
+            <button id="btnFive">5</button>
+            <button id="btnSix">6</button>
+            <button id="btnMinus">-</button>
+        </p>
 
-<script src="js/calc.js"></script>
+        <p>
+            <button id="btnSeven">7</button>
+            <button id="btnEight">8</button>
+            <button id="btnNine">9</button>
+            <button id="btnMult">*</button>
+        </p>
+
+        <p>
+            <button id="btnClear">C</button>
+            <button id="btnZero">0</button>
+            <button id="btnEqual">=</button>
+            <button id="btnDivide">/</button>
+        </p>
+
+    </div>
+
+        <script src="js/calc.js"></script>
 
 </div>
 
