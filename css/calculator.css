@@ -4,8 +4,16 @@
 
 
 body {
-    background-color: whitesmoke;
+    /*background-color: whitesmoke;*/
+    background-image: url("../img/bamboo.jpg");
 
+}
+
+h1 _{
+    width: 600x;
+    margin: 10px auto;
+    margin-top: 88px;
+    text-align: center;
 }
 
 div#calc_container {
@@ -31,8 +39,10 @@ input#operator, input#leftOp, input#rightOp {
     padding: 0px;
     box-shadow: 1px 21x;
     background-color: #DDE0A4;
-    font-size: 15px;
-    font-family: 'Orbitron', sans-serif;;
+    font-size: 30px;
+    font-family: Segment7Standard, sans-serif;
+    text-align: right;
+
 }
 
 
@@ -46,34 +56,47 @@ div.all_btns {
 button {
     padding: 30px;
     font-size: 20px;
-    box-shadow: 2px 2px;
+    box-shadow: 0px 2px 20px #000;
 }
 
+button:hover {
+    background-color: black;
+    color: tan;
+}
 
-button#btnEqual {
+#btnEqual, #btnClear {
+
     background-color: orange;
     color: white;
     border-radius: 25px;
     padding: 20px;
     width: 77px;
     height: 85px;
-    font-style:
+    box-shadow: 0px 1px 30px #000;
+
+}
+
+#btnEqual:hover, #btnClear:hover {
+    background-color: tan;
+    color: white;
 }
 
 #btnPlus, #btnMinus, #btnMult, #btnDivide {
     background-color: #FA4013;
     color: white;
-    font-style:
-    /*font-variant-numeric: 4px;*/
+    box-shadow: 0px 1px 20px #000;
 
 }
 
-button#btnClear {
-    background-color: orange;
+#btnPlus:hover, #btnMinus:hover, #btnMult:hover, #btnDivide:hover {
+    background-color: tan;
     color: white;
-    border-radius: 25px;
-    padding: 20px;
-    width: 77px;
-    height: 85px;
 }
 
+/* ****** CUSTOM FONT FAMILY  ***** */
+
+
+@font-face {
+    font-family: Segment7Standard;
+    src: url(../font/Segment7Standard.woff)
+}

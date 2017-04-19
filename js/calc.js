@@ -1,5 +1,5 @@
 /**
- * Created by mosesfranco on 4/17/17.
+ * Created by mosesfranco & carastoker on 4/17/17.
  */
 "use strict";
 (function () {
@@ -127,7 +127,8 @@
         displayOperand();
     }
 
-    //  Each IF will check for a value in the right operand, and then execute code using a stored value, to allow for recursively operating
+    //  Each IF will check for a value in the right operand,
+    // and then execute code using a stored value, to allow for recursively operating
     //  Otherwise, we assume it is the the first time the program is being run
     function pressEqual() {
         switch (operator.value) {
