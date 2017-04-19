@@ -172,7 +172,7 @@
                 break;
             case "/":
                 if (rightOperand.value === "0") {
-                    alert("Can you divide by zero?");
+                    alert("Nah!");
                     placeholder = "";
                     displayOperand();
                 }
@@ -232,7 +232,7 @@
     divide.addEventListener('click', pressDivide);
 
     clear.addEventListener('click', pressClear);
-    clear.addEventListener('dblclick', doubleClear);
+    clear.addEventListener('click', doubleClear);
     equal.addEventListener('click', pressEqual);
 
     // Boolean operators that assist in selecting which operand button pressses are inputted to
